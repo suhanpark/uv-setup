@@ -1,6 +1,6 @@
 # uv-setup
 
-This project is for making a simple command to start a project with uv[https://docs.astral.sh/uv/]
+This project is for making a simple command to start a project with [uv](https://docs.astral.sh/uv/)
 
 To use, clone this repo to your desired directory.
 You can use the shell file as is in your development environment/directory.
