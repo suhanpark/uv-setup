@@ -15,7 +15,7 @@ mv uv-setup.sh uv-setup
 
 2. Make it executable
 ```
-chmode +x uv-setup
+chmod +x uv-setup
 ```
 
 3. Make it system-wide
