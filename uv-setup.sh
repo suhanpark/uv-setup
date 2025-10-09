@@ -34,6 +34,28 @@ else
     cd "$TARGET_DIR"
 fi
 
+# Define the virtual environment directory
+VENV_DIR=".venv"
+
+# Check if the .venv directory exists
+if [ -d "$VENV_DIR" ]; then
+    echo "✅ Virtual environment already exists. Activating..."
+else
+    echo "🚀 Creating a new virtual environment..."
+    uv venv
+fi
+
+# Activate the virtual environment
+if [ -f "$VENV_DIR/bin/activate" ]; then
+    echo "🔧 Activating virtual environment..."
+    # shellcheck disable=SC1091
+    source "$VENV_DIR/bin/activate"
+    echo "✅ Virtual environment activated."
+else
+    echo "❌ Could not find activation script. Something went wrong."
+    exit 1
+fi
+
 # If requirements.txt exists in the ORIGINAL directory, install dependencies
 REQ_FILE="$ORIG_DIR/requirements.txt"
 if [ -f "$REQ_FILE" ]; then
