@@ -15,6 +15,14 @@ else
 fi
 echo "Using directory name: $DIR_NAME"
 
+# Determine Python Version
+if [ -n "${v-}" ]; then
+    PYTHON_VERSION="$v"
+else
+    PYTHON_VERSION="3.11"
+fi
+echo "Using Python version: $PYTHON_VERSION"
+
 # Compute parent and target paths
 PARENT_DIR=$(dirname "$ORIG_DIR")
 TARGET_DIR="$PARENT_DIR/$DIR_NAME"
@@ -42,7 +50,7 @@ if [ -d "$VENV_DIR" ]; then
     echo "✅ Virtual environment already exists. Activating..."
 else
     echo "🚀 Creating a new virtual environment..."
-    uv venv
+    uv venv --python "$PYTHON_VERSION"
 fi
 
 # Activate the virtual environment
