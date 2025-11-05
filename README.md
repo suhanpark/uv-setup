@@ -10,7 +10,7 @@ If you want to make it into a global executable command,
 1. Rename to match command convention
 ```
 cd uv-setup
-mv uv-setup.sh uv-setup
+cp uv-setup.sh uv-setup
 ```
 
 2. Make it executable
